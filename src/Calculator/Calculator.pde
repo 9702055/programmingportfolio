@@ -169,22 +169,20 @@ void keyPressed() {
   } else if (keyCode == 51 || keyCode == 99) {
     handleEvent('3', true);
   }else if (keyCode == 52 || keyCode == 100) {
-    handleEvent('3', true);
-  } else if (keyCode == 53 || keyCode == 101) {
     handleEvent('4', true);
-  } else if (keyCode == 54 || keyCode == 102) {
+  } else if (keyCode == 53 || keyCode == 101) {
     handleEvent('5', true);
-  } else if (keyCode == 55 || keyCode == 103) {
+  } else if (keyCode == 54 || keyCode == 102) {
     handleEvent('6', true);
-  } else if (keyCode == 56 || keyCode == 104) {
+  } else if (keyCode == 55 || keyCode == 103) {
     handleEvent('7', true);
-  } else if (keyCode == 57 || keyCode == 105) {
+  } else if (keyCode == 56 || keyCode == 104) {
     handleEvent('8', true);
-  } else if (keyCode == 58 || keyCode == 106) {
+  } else if (keyCode == 57 || keyCode == 105) {
     handleEvent('9', true);
-  } else if (keyCode == 59 || keyCode == 107) {
+  } else if (keyCode == 58 || keyCode == 106) {
     handleEvent('0', true);
-  }
+  } 
 }
 
 void handleEvent(char val, boolean isNum) {
