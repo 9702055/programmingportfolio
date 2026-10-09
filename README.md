@@ -1,7 +1,8 @@
 ## OOP Calculator for Programming 1
 
 ![Calculator](https://github.com/9702055/programmingportfolio/blob/main/images/Calculator.png)
-[Link to Source Code] (https://github.com/9702055/programmingportfolio/tree/main/src/Calculator)
+
+[Link to Source Code](https://github.com/9702055/programmingportfolio/tree/main/src/Calculator)
 
 ## Overview
 
