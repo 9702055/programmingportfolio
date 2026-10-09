@@ -1,6 +1,8 @@
 ## OOP Calculator for Programming 1
 
 ## Overview
+
+![Calculator]()
 [Write 2–3 sentences explaining what you are building
 and what a user can do with it.]
 
