@@ -118,25 +118,12 @@ void mouseReleased() {
   for (int i = 0; i < numButtons.length; i++) {
     if (numButtons[i].hover) {
       handleEvent(numButtons[i].val, true);
-      String digit = str(numButtons[i].val);
-
-      if (newEntry || displayVal.equals("0.0")) {
-        displayVal = digit;
-        newEntry = false;
-      } else {
-        displayVal += digit;
-      }
-
-      if (left) {
-        l = float(displayVal);
-      } else {
-        r = float(displayVal);
-      }
     }
   }
 
   for (int i = 0; i < opButtons.length; i++) {
     if (opButtons[i].hover) {
+      handleEvent(opButtons[i].val, false);
     }
   }
 }
@@ -161,14 +148,14 @@ void performCalc() {
 
 void keyPressed() {
   println("keyCode: " +keyCode);
-  displayVal = str(key);
+  // displayVal = str(key);
   if (keyCode == 49 || keyCode == 97) {
     handleEvent('1', true);
   } else if (keyCode == 50 || keyCode == 98) {
     handleEvent('2', true);
   } else if (keyCode == 51 || keyCode == 99) {
     handleEvent('3', true);
-  }else if (keyCode == 52 || keyCode == 100) {
+  } else if (keyCode == 52 || keyCode == 100) {
     handleEvent('4', true);
   } else if (keyCode == 53 || keyCode == 101) {
     handleEvent('5', true);
@@ -182,14 +169,45 @@ void keyPressed() {
     handleEvent('9', true);
   } else if (keyCode == 58 || keyCode == 106) {
     handleEvent('0', true);
+  } else if (keyCode == 46 || keyCode == 110) {
+    handleEvent('.', false);
+  } else if (keyCode == 61 || keyCode == 107) {
+    handleEvent('+', false);
+  } else if (keyCode == 10) {
+    handleEvent('=', false);
+  } else if (keyCode == 45 || keyCode == 109) {
+    handleEvent('-', false);
+  } else if (keyCode == 88 || keyCode == 106) {
+    handleEvent('X', false);
+  } else if (keyCode == 'r' || keyCode == 'R') {
+    handleEvent('√', false);
+  } else if (keyCode == 'c' || keyCode == 'C') {
+    handleEvent('C', false);
+  } else if (keyCode == 'n' || keyCode == 'N') {
+    handleEvent('±', false);
   } 
 }
 
 void handleEvent(char val, boolean isNum) {
   if (isNum == true) {
     // do number stuff
+    String digit = str(val);
+
+    if (newEntry || displayVal.equals("0.0")) {
+      displayVal = digit;
+      newEntry = false;
+    } else {
+      displayVal += digit;
+    }
+
+    if (left) {
+      l = float(displayVal);
+    } else {
+      r = float(displayVal);
+    }
+  } else {
+    // operator stuff
     char clicked = val;
-    
 
     if (clicked == '=') {
       performCalc();
@@ -240,7 +258,5 @@ void handleEvent(char val, boolean isNum) {
         displayVal += ".";
       }
     }
-  } else {
-    // operator stuff
   }
 }
